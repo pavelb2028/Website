@@ -441,8 +441,8 @@
           <img src="c7a1b417-84a7-4de7-972e-c75b36281b5a.JPG" alt="Owner"/>
           <div class="owner-badge-text">
             <div class="name">El Jefe</div>
-            <div class="role" data-en>Owner & Head Mechanic</div>
-            <div class="role" data-es>Dueño y Mecánico Principal</div>
+            <div class="role" data-en>Owner</div>
+            <div class="role" data-es>Dueño</div>
           </div>
         </div>
       </div>
