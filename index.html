@@ -1,0 +1,485 @@
+<title>El Jefe's Tire Shop – Fort Worth, TX</title> <style> :root { --black: #000000; --dark: #080808; --card: #0f0f0f; --border: #1a1a1a; --green: #3ddc57; --green-dim:#2ab342; --green-glow:rgba(61,220,87,0.12); --white: #ffffff; --gray: #3ddc57; /* ALL secondary text = green */ --gray-dim:#2ab342; --font-display:'Bebas Neue',sans-serif; --font-body:'Barlow',sans-serif; --font-cond:'Barlow Condensed',sans-serif; } *,*::before,*::after{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth} body{background:var(--black);color:var(--green);font-family:var(--font-body);font-size:16px;line-height:1.6;overflow-x:hidden}
+/* ── TRANSLATE BAR ── */
+#translate-bar{background:var(--green);color:var(--black);text-align:center;padding:8px 16px;font-family:var(--font-cond);font-size:14px;font-weight:700;letter-spacing:.05em;display:flex;align-items:center;justify-content:center;gap:12px}
+#translate-bar button{background:var(--black);color:var(--green);border:none;padding:4px 14px;font-family:var(--font-cond);font-weight:700;font-size:13px;letter-spacing:.05em;cursor:pointer;border-radius:2px;transition:opacity .2s}
+#translate-bar button:hover{opacity:.8}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:100;background:rgba(0,0,0,.98);border-bottom:1px solid var(--border);backdrop-filter:blur(10px)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{font-family:var(--font-display);font-size:28px;color:var(--white);text-decoration:none;letter-spacing:.05em}
+.nav-logo span{color:var(--green)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:var(--green);text-decoration:none;font-family:var(--font-cond);font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;transition:color .2s;opacity:.7}
+.nav-links a:hover,.nav-links a.active{opacity:1;color:var(--green)}
+.nav-cta{background:var(--green)!important;color:var(--black)!important;padding:8px 20px;border-radius:2px;opacity:1!important}
+.nav-cta:hover{background:var(--green-dim)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--green);transition:all .3s}
+.mobile-menu{display:none;flex-direction:column;background:var(--dark);border-top:1px solid var(--border);padding:16px 24px 24px;gap:16px}
+.mobile-menu a{color:var(--green);text-decoration:none;font-family:var(--font-cond);font-size:18px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.mobile-menu.open{display:flex}
+
+/* ── PAGES ── */
+.page{display:none}
+.page.active{display:block;animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── BUTTONS ── */
+.btn-primary{background:var(--green);color:var(--black);padding:14px 32px;font-family:var(--font-cond);font-size:16px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s,transform .1s}
+.btn-primary:hover{background:var(--green-dim);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--green);padding:14px 32px;font-family:var(--font-cond);font-size:16px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--green);border-radius:2px;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s,color .2s}
+.btn-outline:hover{background:var(--green);color:var(--black)}
+
+/* ── SECTION ── */
+section{padding:80px 24px;max-width:1200px;margin:0 auto}
+.section-eyebrow{font-family:var(--font-cond);font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:12px;opacity:.7}
+.section-title{font-family:var(--font-display);font-size:clamp(36px,5vw,64px);line-height:1;color:var(--white);margin-bottom:16px}
+.section-desc{font-size:16px;color:var(--green);max-width:560px;line-height:1.7;margin-bottom:48px;opacity:.8}
+.divider{border:none;border-top:1px solid var(--border);margin:0}
+
+/* ── HERO ── */
+.hero{min-height:90vh;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--black)}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 70% 50%,rgba(61,220,87,.06) 0%,transparent 70%)}
+.hero-img{position:absolute;inset:0;background-image:url('6bbed6e0-0c2a-499d-b764-5c940d9ff366.JPG');background-size:cover;background-position:center;opacity:.12}
+.hero-content{position:relative;max-width:1200px;margin:0 auto;padding:80px 24px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-eyebrow{font-family:var(--font-cond);font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.hero-eyebrow::before{content:'';display:block;width:32px;height:2px;background:var(--green)}
+.hero h1{font-family:var(--font-display);font-size:clamp(72px,10vw,150px);line-height:.9;letter-spacing:.02em;color:var(--white);margin-bottom:8px}
+.hero h1 .green{color:var(--green)}
+.hero-sub{font-family:var(--font-display);font-size:clamp(28px,4vw,52px);color:var(--green);letter-spacing:.05em;margin-bottom:32px;opacity:.8}
+.hero-desc{font-size:17px;color:var(--green);max-width:520px;margin-bottom:40px;line-height:1.7;opacity:.85}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:48px;margin-top:64px;padding-top:40px;border-top:1px solid var(--border);flex-wrap:wrap}
+.stat-num{font-family:var(--font-display);font-size:48px;color:var(--green);line-height:1}
+.stat-label{font-family:var(--font-cond);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-top:4px;opacity:.7}
+.hero-logo-img{width:100%;max-width:420px;border-radius:4px;filter:drop-shadow(0 0 40px rgba(61,220,87,.3))}
+
+/* ── HOURS BAND ── */
+.hours-band{background:var(--green);padding:14px 24px;text-align:center}
+.hours-band p{font-family:var(--font-cond);font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--black)}
+
+/* ── SERVICES GRID ── */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1px;background:var(--border);border:1px solid var(--border)}
+.service-card{background:var(--card);padding:36px 32px;transition:background .2s;position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--green);transition:height .3s}
+.service-card:hover{background:#0d0d0d}
+.service-card:hover::before{height:100%}
+.service-icon{font-size:32px;margin-bottom:16px;display:block}
+.service-name{font-family:var(--font-cond);font-size:20px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--white);margin-bottom:8px}
+.service-desc{font-size:14px;color:var(--green);line-height:1.6;opacity:.8}
+.service-tag{display:inline-block;margin-top:16px;font-family:var(--font-cond);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green);border:1px solid var(--green);padding:3px 10px;border-radius:2px}
+
+/* ── REVIEWS ── */
+.reviews-bg{background:var(--dark);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
+.review-card{background:var(--card);border:1px solid var(--border);padding:32px;border-radius:2px;position:relative}
+.review-stars{color:var(--green);font-size:18px;letter-spacing:2px;margin-bottom:16px}
+.review-text{font-size:15px;color:var(--green);line-height:1.7;font-style:italic;margin-bottom:20px;opacity:.85}
+.review-author{font-family:var(--font-cond);font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--white)}
+.review-quote{position:absolute;top:20px;right:24px;font-family:var(--font-display);font-size:64px;color:var(--green);opacity:.1;line-height:1}
+
+/* ── GALLERY ── */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.gallery-item{aspect-ratio:4/3;background:var(--card);border:1px solid var(--border);overflow:hidden;position:relative;cursor:pointer}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s;display:block}
+.gallery-item:hover img{transform:scale(1.05)}
+.gallery-item.large{grid-column:span 2;grid-row:span 2}
+.gallery-item.wide{grid-column:span 3}
+
+/* ── ABOUT ── */
+.about-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-visual{position:relative}
+.about-visual img{width:100%;border-radius:2px;display:block}
+.about-visual::after{content:'';position:absolute;bottom:-16px;right:-16px;width:80px;height:80px;border-right:3px solid var(--green);border-bottom:3px solid var(--green)}
+.about-text p{color:var(--green);font-size:16px;line-height:1.8;margin-bottom:20px;opacity:.85}
+.about-text p strong{color:var(--white);opacity:1}
+.about-highlights{display:flex;flex-direction:column;gap:16px;margin-top:32px}
+.about-highlight{display:flex;align-items:center;gap:16px;font-family:var(--font-cond);font-size:15px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--green)}
+.about-highlight::before{content:'';width:8px;height:8px;background:var(--green);border-radius:50%;flex-shrink:0}
+.owner-badge{display:flex;align-items:center;gap:16px;background:var(--card);border:1px solid var(--border);padding:16px 20px;margin-top:32px;border-radius:2px}
+.owner-badge img{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid var(--green)}
+.owner-badge-text .name{font-family:var(--font-display);font-size:22px;color:var(--white)}
+.owner-badge-text .role{font-family:var(--font-cond);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);opacity:.7}
+
+/* ── CONTACT ── */
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.contact-info h3{font-family:var(--font-display);font-size:32px;color:var(--white);margin-bottom:24px}
+.info-row{display:flex;gap:16px;margin-bottom:24px;align-items:flex-start}
+.info-icon{font-size:20px;flex-shrink:0;margin-top:2px}
+.info-label{font-family:var(--font-cond);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green);margin-bottom:4px;opacity:.7}
+.info-value{font-size:15px;color:var(--white);line-height:1.6}
+.info-value a{color:var(--green);text-decoration:none}
+.info-value a:hover{color:var(--white)}
+.map-placeholder{width:100%;height:260px;background:var(--card);border:1px solid var(--border);margin-top:32px;overflow:hidden}
+.map-placeholder iframe{width:100%;height:100%;border:none;filter:invert(90%) hue-rotate(180deg) saturate(0.5)}
+.social-row{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+.social-btn{background:var(--card);border:1px solid var(--green);color:var(--green);padding:10px 18px;font-family:var(--font-cond);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:background .2s,color .2s}
+.social-btn:hover{background:var(--green);color:var(--black)}
+
+/* ── FORM ── */
+.booking-form{background:var(--card);border:1px solid var(--border);padding:40px}
+.booking-form h3{font-family:var(--font-display);font-size:32px;color:var(--white);margin-bottom:8px}
+.booking-form>p{color:var(--green);font-size:14px;margin-bottom:28px;opacity:.8}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-family:var(--font-cond);font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green);margin-bottom:8px}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:var(--black);border:1px solid var(--border);color:var(--green);padding:12px 16px;font-family:var(--font-body);font-size:15px;border-radius:2px;outline:none;transition:border-color .2s;-webkit-appearance:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--green)}
+.form-group input::placeholder,.form-group textarea::placeholder{color:#2a4a2f}
+.form-group select option{background:var(--dark);color:var(--green)}
+.form-group textarea{resize:vertical;min-height:100px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-success{display:none;background:var(--green-glow);border:1px solid var(--green);padding:16px 20px;border-radius:2px;font-family:var(--font-cond);font-size:15px;font-weight:600;color:var(--green);margin-top:16px;letter-spacing:.05em}
+
+/* ── FOOTER ── */
+footer{background:var(--dark);border-top:1px solid var(--border);padding:48px 24px 24px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:40px;flex-wrap:wrap;gap:32px}
+.footer-logo{font-family:var(--font-display);font-size:36px;color:var(--white);letter-spacing:.05em}
+.footer-logo span{color:var(--green)}
+.footer-tagline{font-size:14px;color:var(--green);margin-top:4px;opacity:.7}
+.footer-links{display:flex;gap:48px;flex-wrap:wrap}
+.footer-col h4{font-family:var(--font-cond);font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green);margin-bottom:16px}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:10px}
+.footer-col a{font-size:14px;color:var(--green);text-decoration:none;opacity:.7;transition:opacity .2s}
+.footer-col a:hover{opacity:1}
+.footer-bottom{border-top:1px solid var(--border);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:13px;color:var(--green);opacity:.5}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero-content{grid-template-columns:1fr}
+  .hero-logo-img{display:none}
+  .about-layout{grid-template-columns:1fr;gap:40px}
+  .contact-layout{grid-template-columns:1fr;gap:40px}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-item.large{grid-column:span 1;grid-row:span 1}
+  .gallery-item.wide{grid-column:span 2}
+  .hero-stats{gap:28px}
+  .form-row{grid-template-columns:1fr}
+  .footer-top{flex-direction:column}
+}
+@media(max-width:480px){
+  .gallery-grid{grid-template-columns:1fr}
+  .gallery-item.wide{grid-column:span 1}
+  .booking-form{padding:24px}
+}
+
+/* Language */
+[data-es]{display:none}
+body.spanish [data-en]{display:none}
+body.spanish [data-es]{display:revert}
+</style>
+🌐 También disponemos de nuestra página en Español 🌐 This page is also available in English Ver en Español View in English
+EL JEFE'S
+HomeInicio
+ServicesServicios
+About UsNosotros
+GalleryGalería
+Book AppointmentHacer Cita
+Home Inicio Services Servicios About Us Nosotros Gallery Galería Book Appointment Hacer Cita
+Fort Worth, TX — Your Neighborhood Shop
+Fort Worth, TX — Tu Taller de Confianza
+EL JEFE'S
+
+TIRE SHOP
+TALLER DE LLANTAS
+Fort Worth's go-to spot for tires, brakes, and everything in between. New and used tires, expert mechanics, honest prices — done right, every time.
+
+El lugar de confianza en Fort Worth para llantas, frenos y todo lo que necesitas. Llantas nuevas y usadas, mecánicos expertos y precios honestos — siempre bien hecho.
+
+Book Appointment Hacer una Cita Our Services Nuestros Servicios
+9+
+Services
+Servicios
+6
+Days a Week
+Días/Semana
+100%
+Committed
+Comprometidos
+El Jefe's Tire Shop Logo
+⏰ Open Monday – Saturday  |  8:00 AM – 7:00 PM  |  📍 2200 E Rosedale St, Fort Worth TX  |  📞 682-385-9218
+
+⏰ Abierto Lunes – Sábado  |  8:00 AM – 7:00 PM  |  📍 2200 E Rosedale St, Fort Worth TX  |  📞 682-385-9218
+
+What We Do
+Lo Que Hacemos
+FULL AUTO CARE
+SERVICIO COMPLETO
+From a simple flat repair to a full brake job — we handle it all. Call us for a quote.
+
+Desde un parche sencillo hasta frenos completos — lo hacemos todo. Llámanos para un presupuesto.
+
+🛞
+Tire Installation
+Instalación de Llantas
+New and used tires mounted and ready. Multiple brands available.
+
+Llantas nuevas y usadas montadas y listas.
+
+New & Used Nuevas y Usadas
+⚖️
+Balancing & Rotation
+Balanceo y Rotación
+Smooth ride, even wear. Keep your tires lasting longer.
+
+Manejo suave, desgaste parejo. Llantas que duran más.
+
+🩹
+Flat Repair
+Reparación de Ponchados
+Plug or patch — back on the road fast.
+
+Tapón o parche — de regreso al camino rápido.
+
+🛑
+Brakes
+Frenos
+Pads, rotors, full brake service. Safety first.
+
+Pastillas, discos, servicio completo de frenos.
+
+Safety First Seguridad Primero
+🛢️
+Oil Change
+Cambio de Aceite
+Quick, clean, done right. Keep your engine strong.
+
+Rápido, limpio y bien hecho.
+
+🔩
+General Mechanic
+Mecánica General
+Got a problem? Bring it in. We'll figure it out.
+
+¿Tienes un problema? Tráelo. Lo resolvemos.
+
+See All Services Ver Todos los Servicios
+What Customers Say
+Lo Que Dicen los Clientes
+REVIEWS
+RESEÑAS
+★★★★★
+"Best tire shop in Fort Worth. Fast, honest, and fair prices. I won't go anywhere else."
+
+"La mejor llantería en Fort Worth. Rápidos, honestos y precios justos."
+
+— Maria G.
+"
+★★★★★
+"Got a flat on my way to work, pulled in and they had me back on the road in 20 minutes. Incredible service."
+
+"Se me ponchó una llanta y en 20 minutos ya iba de regreso. Servicio increíble."
+
+— James T.
+"
+★★★★★
+"They really know their stuff. Fixed my brakes and checked everything. Trustworthy people."
+
+"Arreglaron mis frenos y revisaron todo. Gente de confianza."
+
+— Carlos R.
+"
+Everything You Need
+Todo Lo Que Necesitas
+OUR SERVICES
+NUESTROS SERVICIOS
+Full tire and auto services. Call us for pricing — straight answers, no runaround.
+
+Servicios completos de llantas y mecánica. Llámanos para precios — respuestas directas.
+
+🛞
+New Tire Installation
+Llanta Nueva
+Multiple brands for every vehicle and budget. Mounted and balanced on the spot.
+
+Varias marcas para cada vehículo y presupuesto. Montadas y balanceadas.
+
+Call for QuoteLlama para Precio
+♻️
+Used Tires
+Llantas Usadas
+Quality used tires at unbeatable prices. Great value without sacrificing safety.
+
+Llantas usadas de calidad a precios inmejorables.
+
+Best ValueMejor Precio
+⚖️
+Tire Balancing
+Balanceo
+Vibration at highway speed? We'll balance your tires for a smooth, safe ride.
+
+¿Vibración a alta velocidad? Balanceamos tus llantas.
+
+🔄
+Tire Rotation
+Rotación
+Extend tire life with regular rotation. Recommended every 5,000–7,000 miles.
+
+Extiende la vida de tus llantas con rotación regular.
+
+🩹
+Flat Repair — Plug
+Reparación — Tapón
+Fast plug repair for tread punctures. In and out in minutes.
+
+Reparación rápida con tapón. Entrás y salís en minutos.
+
+🩻
+Flat Repair — Patch
+Reparación — Parche
+For larger damage — a patch provides a stronger, longer-lasting fix.
+
+Para daños mayores — reparación más fuerte y duradera.
+
+🛑
+Brake Service
+Frenos
+Squealing or grinding? We inspect and replace pads and rotors.
+
+¿Chirrido? Inspeccionamos y reemplazamos pastillas y discos.
+
+Safety FirstSeguridad Primero
+🛢️
+Oil Change
+Cambio de Aceite
+Conventional and synthetic options. Fluids checked and topped off.
+
+Convencional y sintético. Fluidos revisados.
+
+🔩
+General Mechanic
+Mecánica General
+Engine, suspension, and more. Honest diagnosis, no surprises.
+
+Motor, suspensión y más. Diagnóstico honesto.
+
+📞 Call Now 📞 Llamar Ahora Book Online Reservar en Línea
+Our Story
+Nuestra Historia
+ABOUT EL JEFE'S
+SOBRE EL JEFE'S
+El Jefe's Tire Shop
+El Jefe's Tire Shop is Fort Worth's trusted neighborhood tire and auto shop, located right on E Rosedale St. We've built our reputation serving our community with honest work and fair prices.
+
+We know how important your vehicle is to your daily life — that's why we treat every car like it's our own. From a quick flat fix to a full brake job, we get it done right the first time.
+
+We're proud to serve both English and Spanish-speaking customers with the same level of care and professionalism.
+
+El Jefe's Tire Shop es la llantería y taller de confianza del vecindario en Fort Worth, ubicados en E Rosedale St. Hemos construido nuestra reputación sirviendo a nuestra comunidad con trabajo honesto y precios justos.
+
+Sabemos lo importante que es tu vehículo — por eso tratamos cada carro como si fuera el nuestro. Desde un parche rápido hasta frenos completos, lo hacemos bien a la primera.
+
+Atendemos con orgullo a clientes de habla inglesa y española con el mismo nivel de cuidado y profesionalismo.
+
+Bilingual team — English & Spanish
+Equipo bilingüe — Inglés y Español
+New and used tires always in stock
+Llantas nuevas y usadas siempre en existencia
+Open 6 days a week, 8AM–7PM
+Abiertos 6 días a la semana, 8AM–7PM
+Honest quotes, no hidden fees
+Presupuestos honestos, sin cargos ocultos
+Owner
+El Jefe
+Owner
+Dueño
+Our Work
+Nuestro Trabajo
+GALLERY
+GALERÍA
+A look inside El Jefe's — our shop, our inventory, our people.
+
+Un vistazo al interior de El Jefe's — nuestro taller, inventario y equipo.
+
+Tire inventory
+Shop front
+Used tires rack
+Shop
+Tire stock
+Shop interior
+Mechanic working
+Used tire racks
+New tires
+Get In Touch
+Contáctanos
+BOOK AN APPOINTMENT
+HACER UNA CITA
+Find Us
+
+Encuéntranos
+
+📍
+Address
+Dirección
+2200 E Rosedale St
+Fort Worth, TX 76105
+📞
+Phone
+Teléfono
+682-385-9218
+✉️
+Email
+eljefestires@gmail.com
+⏰
+Hours
+Horario
+Monday – Saturday   8:00 AM – 7:00 PM
+Lunes – Sábado   8:00 AM – 7:00 PM
+Facebook TikTok Snapchat
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3356.3!2d-97.3065!3d32.7281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s2200+E+Rosedale+St%2C+Fort+Worth%2C+TX+76105!5e0!3m2!1sen!2sus!4v1234567890" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+Request an Appointment
+
+Solicitar una Cita
+
+Fill out the form and we'll get back to you as soon as possible.
+
+Llena el formulario y nos pondremos en contacto pronto.
+
+First NameNombre
+Last NameApellido
+Phone NumberTeléfono
+Service NeededServicio Select a service... Selecciona un servicio... New Tires / Llantas Nuevas Used Tires / Llantas Usadas Flat Repair / Ponchado Brakes / Frenos Oil Change / Cambio de Aceite Balancing & Rotation General Mechanic / Mecánica Other / Otro
+Preferred DateFecha Preferida
+Message (optional)Mensaje (opcional)<textarea id="message" placeholder="Tell us about your vehicle..."></textarea>
+Send Request Enviar Solicitud
+✅ Request sent! We'll call you back shortly. ✅ ¡Solicitud enviada! Te llamaremos pronto.
+EL JEFE'S
+Fort Worth's Tire & Auto Experts
+Expertos en Llantas y Autos de Fort Worth
+Pages
+
+Páginas
+
+HomeInicio
+ServicesServicios
+AboutNosotros
+GalleryGalería
+ContactContacto
+Contact
+
+682-385-9218
+eljefestires@gmail.com
+2200 E Rosedale St, FW TX
+Follow Us
+
+Síguenos
+
+Facebook
+TikTok
+Snapchat
+© 2025 El Jefe's Tire Shop. All rights reserved.
+
+© 2025 El Jefe's Tire Shop. Todos los derechos reservados.
+
+Mon–Sat: 8AM – 7PM
+
+Lun–Sáb: 8AM – 7PM
+
+<script> function showPage(name){ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active')); document.getElementById('page-'+name).classList.add('active'); window.scrollTo({top:0,behavior:'smooth'}); } function toggleMenu(){ document.getElementById('mobile-menu').classList.toggle('open'); } let isSpanish=false; function toggleLanguage(){ isSpanish=!isSpanish; document.body.classList.toggle('spanish',isSpanish); } function submitForm(){ const fname=document.getElementById('fname').value.trim(); const phone=document.getElementById('phone').value.trim(); const service=document.getElementById('service').value; if(!fname||!phone||!service){ alert(isSpanish?'Por favor completa los campos requeridos.':'Please fill in the required fields.'); return; } document.getElementById('form-success').style.display='block'; document.getElementById('fname').value=''; document.getElementById('lname').value=''; document.getElementById('phone').value=''; document.getElementById('service').value=''; document.getElementById('date').value=''; document.getElementById('message').value=''; } </script>
