@@ -6,23 +6,12 @@
   <title>El Jefe's Tire Shop – Fort Worth, TX</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet"/>
   <style>
-    :root {
-      --black:#000000;--dark:#080808;--card:#0f0f0f;--border:#1a1a1a;
-      --green:#3ddc57;--green-dim:#2ab342;--green-glow:rgba(61,220,87,0.12);
-      --white:#ffffff;
-      --font-display:'Bebas Neue',sans-serif;
-      --font-body:'Barlow',sans-serif;
-      --font-cond:'Barlow Condensed',sans-serif;
-    }
+    :root{--black:#000000;--dark:#080808;--card:#0f0f0f;--border:#1a1a1a;--green:#3ddc57;--green-dim:#2ab342;--green-glow:rgba(61,220,87,0.12);--white:#ffffff;--font-display:'Bebas Neue',sans-serif;--font-body:'Barlow',sans-serif;--font-cond:'Barlow Condensed',sans-serif}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{background:var(--black);color:var(--green);font-family:var(--font-body);font-size:16px;line-height:1.6;overflow-x:hidden}
-
-    /* TRANSLATE BAR */
     #translate-bar{background:var(--green);color:var(--black);text-align:center;padding:8px 16px;font-family:var(--font-cond);font-size:14px;font-weight:700;letter-spacing:.05em;display:flex;align-items:center;justify-content:center;gap:12px}
     #translate-bar button{background:var(--black);color:var(--green);border:none;padding:4px 14px;font-family:var(--font-cond);font-weight:700;font-size:13px;cursor:pointer;border-radius:2px}
-
-    /* NAV */
     nav{position:sticky;top:0;z-index:100;background:rgba(0,0,0,.98);border-bottom:1px solid var(--border);backdrop-filter:blur(10px)}
     .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px}
     .nav-logo{font-family:var(--font-display);font-size:28px;color:var(--white);text-decoration:none;letter-spacing:.05em}
@@ -37,36 +26,24 @@
     .mobile-menu{display:none;flex-direction:column;background:var(--dark);border-top:1px solid var(--border);padding:16px 24px 24px;gap:16px}
     .mobile-menu a{color:var(--green);text-decoration:none;font-family:var(--font-cond);font-size:18px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
     .mobile-menu.open{display:flex}
-
-    /* PAGES */
     .page{display:none}
     .page.active{display:block;animation:fadeIn .3s ease}
     @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-
-    /* BUTTONS */
     .btn-primary{background:var(--green);color:var(--black);padding:14px 32px;font-family:var(--font-cond);font-size:16px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s,transform .1s}
     .btn-primary:hover{background:var(--green-dim);transform:translateY(-1px)}
     .btn-outline{background:transparent;color:var(--green);padding:14px 32px;font-family:var(--font-cond);font-size:16px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--green);border-radius:2px;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s,color .2s}
     .btn-outline:hover{background:var(--green);color:var(--black)}
-
-    /* SECTION */
     section{padding:80px 24px;max-width:1200px;margin:0 auto}
     .section-eyebrow{font-family:var(--font-cond);font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:12px;opacity:.7}
     .section-title{font-family:var(--font-display);font-size:clamp(36px,5vw,64px);line-height:1;color:var(--white);margin-bottom:16px}
     .section-desc{font-size:16px;color:var(--green);max-width:560px;line-height:1.7;margin-bottom:48px;opacity:.8}
     .divider{border:none;border-top:1px solid var(--border);margin:0}
-
-    /* DISCLAIMER STRIP */
     .disclaimer-strip{display:flex;align-items:stretch;gap:0;margin-top:40px;border:none}
-    .disclaimer-box{flex:1;padding:20px 24px;background:var(--black);position:relative}
-    .disclaimer-box:first-child{border-right:1px solid var(--border)}
-    .disclaimer-box:last-child{border-left:1px solid var(--border)}
+    .disclaimer-box{flex:1;padding:20px 24px;background:transparent;position:relative;border:none}
     .disclaimer-center{display:flex;align-items:center;justify-content:center;padding:20px 24px;flex-shrink:0;flex-direction:column;gap:12px;background:transparent;border:1px solid var(--border)}
     .disclaimer-label{font-family:var(--font-cond);font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green);opacity:.5;margin-bottom:6px}
     .disclaimer-text{font-family:var(--font-cond);font-size:13px;font-weight:600;color:var(--green);line-height:1.5;letter-spacing:.02em}
     .disclaimer-icon{font-size:20px;margin-bottom:6px;display:block}
-
-    /* HERO */
     .hero{min-height:90vh;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--black)}
     .hero-bg{position:absolute;inset:0;background-image:url('6bbed6e0-0c2a-499d-b764-5c940d9ff366.JPG');background-size:cover;background-position:center;opacity:.18}
     .hero-content{position:relative;max-width:1200px;margin:0 auto;padding:80px 24px;width:100%}
@@ -80,12 +57,8 @@
     .hero-stats{display:flex;gap:48px;margin-top:64px;padding-top:40px;border-top:1px solid var(--border);flex-wrap:wrap}
     .stat-num{font-family:var(--font-display);font-size:48px;color:var(--green);line-height:1}
     .stat-label{font-family:var(--font-cond);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-top:4px;opacity:.7}
-
-    /* HOURS BAND */
     .hours-band{background:var(--green);padding:14px 24px;text-align:center}
     .hours-band p{font-family:var(--font-cond);font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--black)}
-
-    /* SERVICES */
     .services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1px;background:var(--border);border:1px solid var(--border)}
     .service-card{background:var(--black);padding:36px 32px;transition:background .2s;position:relative;overflow:hidden}
     .service-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--green);transition:height .3s}
@@ -95,8 +68,6 @@
     .service-name{font-family:var(--font-cond);font-size:20px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--white);margin-bottom:8px}
     .service-desc{font-size:14px;color:var(--green);line-height:1.6;opacity:.8}
     .service-tag{display:inline-block;margin-top:16px;font-family:var(--font-cond);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green);border:1px solid var(--green);padding:3px 10px;border-radius:2px}
-
-    /* REVIEWS */
     .reviews-bg{background:var(--black);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
     .reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
     .review-card{background:#0a0a0a;border:1px solid var(--border);padding:32px;border-radius:2px;position:relative}
@@ -104,16 +75,11 @@
     .review-text{font-size:15px;color:var(--green);line-height:1.7;font-style:italic;margin-bottom:20px;opacity:.85}
     .review-author{font-family:var(--font-cond);font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--white)}
     .review-quote{position:absolute;top:20px;right:24px;font-family:var(--font-display);font-size:64px;color:var(--green);opacity:.1;line-height:1}
-
-    /* GALLERY */
     .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
     .gallery-item{aspect-ratio:4/3;background:var(--black);border:1px solid var(--border);overflow:hidden;position:relative}
     .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s;display:block}
     .gallery-item:hover img{transform:scale(1.05)}
-    .gallery-item.large{grid-column:span 2;grid-row:span 2}
     .gallery-item.wide{grid-column:span 3}
-
-    /* ABOUT */
     .about-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
     .about-visual{position:relative}
     .about-visual img{width:100%;border-radius:2px;display:block}
@@ -123,8 +89,6 @@
     .about-highlights{display:flex;flex-direction:column;gap:16px;margin-top:32px}
     .about-highlight{display:flex;align-items:center;gap:16px;font-family:var(--font-cond);font-size:15px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--green)}
     .about-highlight::before{content:'';width:8px;height:8px;background:var(--green);border-radius:50%;flex-shrink:0}
-
-    /* CONTACT */
     .contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px}
     .contact-info h3{font-family:var(--font-display);font-size:32px;color:var(--white);margin-bottom:24px}
     .info-row{display:flex;gap:16px;margin-bottom:24px;align-items:flex-start}
@@ -138,8 +102,6 @@
     .social-row{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
     .social-btn{background:var(--black);border:1px solid var(--green);color:var(--green);padding:10px 18px;font-family:var(--font-cond);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:background .2s,color .2s}
     .social-btn:hover{background:var(--green);color:var(--black)}
-
-    /* FORM */
     .booking-form{background:var(--black);border:1px solid var(--border);padding:40px}
     .booking-form h3{font-family:var(--font-display);font-size:32px;color:var(--white);margin-bottom:8px}
     .booking-form>p{color:var(--green);font-size:14px;margin-bottom:28px;opacity:.8}
@@ -152,8 +114,6 @@
     .form-group textarea{resize:vertical;min-height:100px}
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     .form-success{display:none;background:var(--green-glow);border:1px solid var(--green);padding:16px 20px;border-radius:2px;font-family:var(--font-cond);font-size:15px;font-weight:600;color:var(--green);margin-top:16px}
-
-    /* FOOTER */
     footer{background:var(--black);border-top:1px solid var(--border);padding:48px 24px 24px}
     .footer-inner{max-width:1200px;margin:0 auto}
     .footer-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:40px;flex-wrap:wrap;gap:32px}
@@ -170,31 +130,9 @@
     .footer-col a:hover{opacity:1}
     .footer-bottom{border-top:1px solid var(--border);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
     .footer-bottom p{font-size:13px;color:var(--green);opacity:.5}
-
-    /* RESPONSIVE */
-    @media(max-width:900px){
-      .about-layout{grid-template-columns:1fr;gap:40px}
-      .contact-layout{grid-template-columns:1fr;gap:40px}
-      .disclaimer-strip{flex-direction:column}
-      .disclaimer-box:first-child{border-right:none;border-bottom:1px solid var(--border)}
-      .disclaimer-box:last-child{border-left:none;border-top:1px solid var(--border)}
-    }
-    @media(max-width:768px){
-      .nav-links{display:none}
-      .hamburger{display:flex}
-      .gallery-grid{grid-template-columns:repeat(2,1fr)}
-      .gallery-item.large{grid-column:span 1;grid-row:span 1}
-      .gallery-item.wide{grid-column:span 2}
-      .hero-stats{gap:28px}
-      .form-row{grid-template-columns:1fr}
-      .footer-top{flex-direction:column}
-    }
-    @media(max-width:480px){
-      .gallery-grid{grid-template-columns:1fr}
-      .gallery-item.wide{grid-column:span 1}
-      .booking-form{padding:24px}
-    }
-
+    @media(max-width:900px){.about-layout{grid-template-columns:1fr;gap:40px}.contact-layout{grid-template-columns:1fr;gap:40px}.disclaimer-strip{flex-direction:column}}
+    @media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.gallery-grid{grid-template-columns:repeat(2,1fr)}.gallery-item.wide{grid-column:span 2}.hero-stats{gap:28px}.form-row{grid-template-columns:1fr}.footer-top{flex-direction:column}}
+    @media(max-width:480px){.gallery-grid{grid-template-columns:1fr}.gallery-item.wide{grid-column:span 1}.booking-form{padding:24px}}
     [data-es]{display:none}
     body.spanish [data-en]{display:none}
     body.spanish [data-es]{display:revert}
@@ -202,17 +140,12 @@
 </head>
 <body>
 
-<!-- TRANSLATE BAR -->
 <div id="translate-bar">
   <span data-en>🌐 También disponemos de nuestra página en Español</span>
   <span data-es>🌐 This page is also available in English</span>
-  <button onclick="toggleLanguage()">
-    <span data-en>Ver en Español</span>
-    <span data-es>View in English</span>
-  </button>
+  <button onclick="toggleLanguage()"><span data-en>Ver en Español</span><span data-es>View in English</span></button>
 </div>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a href="#" class="nav-logo" onclick="showPage('home');return false">EL <span>JEFE'S</span></a>
@@ -223,28 +156,19 @@
       <li><a href="#" onclick="showPage('gallery');return false" data-en>Gallery</a><a href="#" onclick="showPage('gallery');return false" data-es>Galería</a></li>
       <li><a href="#" onclick="showPage('contact');return false" class="nav-cta" data-en>Book Appointment</a><a href="#" onclick="showPage('contact');return false" class="nav-cta" data-es>Hacer Cita</a></li>
     </ul>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
   <div class="mobile-menu" id="mobile-menu">
-    <a href="#" onclick="showPage('home');toggleMenu();return false" data-en>Home</a>
-    <a href="#" onclick="showPage('home');toggleMenu();return false" data-es>Inicio</a>
-    <a href="#" onclick="showPage('services');toggleMenu();return false" data-en>Services</a>
-    <a href="#" onclick="showPage('services');toggleMenu();return false" data-es>Servicios</a>
-    <a href="#" onclick="showPage('about');toggleMenu();return false" data-en>About Us</a>
-    <a href="#" onclick="showPage('about');toggleMenu();return false" data-es>Nosotros</a>
-    <a href="#" onclick="showPage('gallery');toggleMenu();return false" data-en>Gallery</a>
-    <a href="#" onclick="showPage('gallery');toggleMenu();return false" data-es>Galería</a>
-    <a href="#" onclick="showPage('contact');toggleMenu();return false" data-en>Book Appointment</a>
-    <a href="#" onclick="showPage('contact');toggleMenu();return false" data-es>Hacer Cita</a>
+    <a href="#" onclick="showPage('home');toggleMenu();return false" data-en>Home</a><a href="#" onclick="showPage('home');toggleMenu();return false" data-es>Inicio</a>
+    <a href="#" onclick="showPage('services');toggleMenu();return false" data-en>Services</a><a href="#" onclick="showPage('services');toggleMenu();return false" data-es>Servicios</a>
+    <a href="#" onclick="showPage('about');toggleMenu();return false" data-en>About Us</a><a href="#" onclick="showPage('about');toggleMenu();return false" data-es>Nosotros</a>
+    <a href="#" onclick="showPage('gallery');toggleMenu();return false" data-en>Gallery</a><a href="#" onclick="showPage('gallery');toggleMenu();return false" data-es>Galería</a>
+    <a href="#" onclick="showPage('contact');toggleMenu();return false" data-en>Book Appointment</a><a href="#" onclick="showPage('contact');toggleMenu();return false" data-es>Hacer Cita</a>
   </div>
 </nav>
 
-
-<!-- ══ HOME ══ -->
+<!-- HOME -->
 <div class="page active" id="page-home">
-
   <div class="hero">
     <div class="hero-bg"></div>
     <div class="hero-content">
@@ -262,23 +186,19 @@
         <button class="btn-outline" onclick="showPage('services')" data-es>Nuestros Servicios</button>
       </div>
       <div class="hero-stats">
-        <div><div class="stat-num">10+</div><div class="stat-label" data-en>Services</div><div class="stat-label" data-es>Servicios</div></div>
+        <div><div class="stat-num">12+</div><div class="stat-label" data-en>Services</div><div class="stat-label" data-es>Servicios</div></div>
         <div><div class="stat-num">6</div><div class="stat-label" data-en>Days a Week</div><div class="stat-label" data-es>Días/Semana</div></div>
         <div><div class="stat-num">100%</div><div class="stat-label" data-en>Committed</div><div class="stat-label" data-es>Comprometidos</div></div>
       </div>
     </div>
   </div>
-
   <div class="hours-band">
     <p data-en>⏰ Open Monday – Saturday &nbsp;|&nbsp; 8:00 AM – 7:00 PM &nbsp;|&nbsp; 📍 2200 E Rosedale St, Fort Worth TX &nbsp;|&nbsp; 📞 682-385-9218</p>
     <p data-es>⏰ Abierto Lunes – Sábado &nbsp;|&nbsp; 8:00 AM – 7:00 PM &nbsp;|&nbsp; 📍 2200 E Rosedale St, Fort Worth TX &nbsp;|&nbsp; 📞 682-385-9218</p>
   </div>
-
   <section>
-    <div class="section-eyebrow" data-en>What We Do</div>
-    <div class="section-eyebrow" data-es>Lo Que Hacemos</div>
-    <div class="section-title" data-en>FULL AUTO CARE</div>
-    <div class="section-title" data-es>SERVICIO COMPLETO</div>
+    <div class="section-eyebrow" data-en>What We Do</div><div class="section-eyebrow" data-es>Lo Que Hacemos</div>
+    <div class="section-title" data-en>FULL AUTO CARE</div><div class="section-title" data-es>SERVICIO COMPLETO</div>
     <p class="section-desc" data-en>From a simple flat repair to a full brake job — we handle it all. Call us for a quote.</p>
     <p class="section-desc" data-es>Desde un parche sencillo hasta frenos completos — lo hacemos todo. Llámanos para un presupuesto.</p>
     <div class="services-grid">
@@ -290,38 +210,17 @@
       <div class="service-card"><span class="service-icon">🛢️</span><div class="service-name" data-en>Oil Change</div><div class="service-name" data-es>Cambio de Aceite</div><p class="service-desc" data-en>Quick, clean, done right. Keep your engine strong.</p><p class="service-desc" data-es>Rápido, limpio y bien hecho.</p></div>
       <div class="service-card"><span class="service-icon">🔩</span><div class="service-name" data-en>General Mechanic</div><div class="service-name" data-es>Mecánica General</div><p class="service-desc" data-en>Got a problem? Bring it in. We'll figure it out.</p><p class="service-desc" data-es>¿Tienes un problema? Tráelo. Lo resolvemos.</p></div>
     </div>
-
-    <!-- DISCLAIMER STRIP HOME -->
     <div class="disclaimer-strip">
-      <div class="disclaimer-box">
-        <span class="disclaimer-icon">⚠️</span>
-        <div class="disclaimer-label" data-en>Disclaimer</div>
-        <div class="disclaimer-label" data-es>Aviso</div>
-        <div class="disclaimer-text" data-en>No warranty on parts supplied by the customer.</div>
-        <div class="disclaimer-text" data-es>No hay garantía en piezas suministradas por el cliente.</div>
-      </div>
-      <div class="disclaimer-center">
-        <button class="btn-primary" onclick="showPage('services')" data-en>See All Services</button>
-        <button class="btn-primary" onclick="showPage('services')" data-es>Ver Todos los Servicios</button>
-      </div>
-      <div class="disclaimer-box">
-        <span class="disclaimer-icon">📋</span>
-        <div class="disclaimer-label" data-en>Disclaimer</div>
-        <div class="disclaimer-label" data-es>Aviso</div>
-        <div class="disclaimer-text" data-en>After 15 days we are not responsible for any finished work not picked up.</div>
-        <div class="disclaimer-text" data-es>Después de 15 días no nos hacemos responsables por ningún trabajo terminado no retirado.</div>
-      </div>
+      <div class="disclaimer-box"><span class="disclaimer-icon">⚠️</span><div class="disclaimer-label" data-en>Disclaimer</div><div class="disclaimer-label" data-es>Aviso</div><div class="disclaimer-text" data-en>No warranty on parts supplied by the customer.</div><div class="disclaimer-text" data-es>No hay garantía en piezas suministradas por el cliente.</div></div>
+      <div class="disclaimer-center"><button class="btn-primary" onclick="showPage('services')" data-en>See All Services</button><button class="btn-primary" onclick="showPage('services')" data-es>Ver Todos los Servicios</button></div>
+      <div class="disclaimer-box"><span class="disclaimer-icon">📋</span><div class="disclaimer-label" data-en>Disclaimer</div><div class="disclaimer-label" data-es>Aviso</div><div class="disclaimer-text" data-en>After 15 days we are not responsible for any finished work not picked up.</div><div class="disclaimer-text" data-es>Después de 15 días no nos hacemos responsables por ningún trabajo terminado no retirado.</div></div>
     </div>
   </section>
-
   <hr class="divider">
-
   <div class="reviews-bg">
     <section>
-      <div class="section-eyebrow" data-en>What Customers Say</div>
-      <div class="section-eyebrow" data-es>Lo Que Dicen los Clientes</div>
-      <div class="section-title" data-en>REVIEWS</div>
-      <div class="section-title" data-es>RESEÑAS</div>
+      <div class="section-eyebrow" data-en>What Customers Say</div><div class="section-eyebrow" data-es>Lo Que Dicen los Clientes</div>
+      <div class="section-title" data-en>REVIEWS</div><div class="section-title" data-es>RESEÑAS</div>
       <div class="reviews-grid">
         <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text" data-en>"Best tire shop in Fort Worth. Fast, honest, and fair prices. I won't go anywhere else."</p><p class="review-text" data-es>"La mejor llantería en Fort Worth. Rápidos, honestos y precios justos."</p><div class="review-author">— Maria G.</div><div class="review-quote">"</div></div>
         <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text" data-en>"Got a flat on my way to work, pulled in and they had me back on the road in 20 minutes. Incredible service."</p><p class="review-text" data-es>"Se me ponchó una llanta y en 20 minutos ya iba de regreso. Servicio increíble."</p><div class="review-author">— James T.</div><div class="review-quote">"</div></div>
@@ -329,17 +228,13 @@
       </div>
     </section>
   </div>
+</div>
 
-</div><!-- /home -->
-
-
-<!-- ══ SERVICES ══ -->
+<!-- SERVICES -->
 <div class="page" id="page-services">
   <section style="padding-top:64px">
-    <div class="section-eyebrow" data-en>Everything You Need</div>
-    <div class="section-eyebrow" data-es>Todo Lo Que Necesitas</div>
-    <div class="section-title" data-en>OUR SERVICES</div>
-    <div class="section-title" data-es>NUESTROS SERVICIOS</div>
+    <div class="section-eyebrow" data-en>Everything You Need</div><div class="section-eyebrow" data-es>Todo Lo Que Necesitas</div>
+    <div class="section-title" data-en>OUR SERVICES</div><div class="section-title" data-es>NUESTROS SERVICIOS</div>
     <p class="section-desc" data-en>Full tire and auto services. Call us for pricing — straight answers, no runaround.</p>
     <p class="section-desc" data-es>Servicios completos de llantas y mecánica. Llámanos para precios — respuestas directas.</p>
     <div class="services-grid">
@@ -352,47 +247,28 @@
       <div class="service-card"><span class="service-icon">🩻</span><div class="service-name" data-en>Flat Repair — Patch</div><div class="service-name" data-es>Reparación — Parche</div><p class="service-desc" data-en>For larger damage — a patch provides a stronger, longer-lasting fix.</p><p class="service-desc" data-es>Para daños mayores — reparación más fuerte y duradera.</p></div>
       <div class="service-card"><span class="service-icon">🛑</span><div class="service-name" data-en>Brake Service</div><div class="service-name" data-es>Frenos</div><p class="service-desc" data-en>Squealing or grinding? We inspect and replace pads and rotors.</p><p class="service-desc" data-es>¿Chirrido? Inspeccionamos y reemplazamos pastillas y discos.</p><span class="service-tag" data-en>Safety First</span><span class="service-tag" data-es>Seguridad Primero</span></div>
       <div class="service-card"><span class="service-icon">🛢️</span><div class="service-name" data-en>Oil Change</div><div class="service-name" data-es>Cambio de Aceite</div><p class="service-desc" data-en>Conventional and synthetic options. Fluids checked and topped off.</p><p class="service-desc" data-es>Convencional y sintético. Fluidos revisados.</p></div>
-      <div class="service-card"><span class="service-icon">🔩</span><div class="service-name" data-en>General Mechanic</div><div class="service-name" data-es>Mecánica General</div><p class="service-desc" data-en>Engine, suspension, and more. Honest diagnosis, no surprises.</p><p class="service-desc" data-es>Motor, suspensión y más. Diagnóstico honesto.</p></div> <div class="service-card"><span class="service-icon">❄️</span><div class="service-name" data-en>A/C Repair</div><div class="service-name" data-es>Reparación de A/C</div><p class="service-desc" data-en>Is your A/C blowing hot? We diagnose and repair your vehicle's air conditioning system.</p><p class="service-desc" data-es>¿Tu A/C no enfría? Diagnosticamos y reparamos el sistema de aire acondicionado.</p></div> <div class="service-card"><span class="service-icon">🔧</span><div class="service-name" data-en>Suspension Diagnostic</div><div class="service-name" data-es>Diagnóstico de Suspensión</div><p class="service-desc" data-en>Bumpy ride or pulling to one side? We inspect your suspension and identify the issue fast.</p><p class="service-desc" data-es>¿Manejo brusco o jalón? Inspeccionamos tu suspensión e identificamos el problema rápido.</p></div>
+      <div class="service-card"><span class="service-icon">🔩</span><div class="service-name" data-en>General Mechanic</div><div class="service-name" data-es>Mecánica General</div><p class="service-desc" data-en>Engine, suspension, and more. Honest diagnosis, no surprises.</p><p class="service-desc" data-es>Motor, suspensión y más. Diagnóstico honesto.</p></div>
+      <div class="service-card"><span class="service-icon">❄️</span><div class="service-name" data-en>A/C Repair</div><div class="service-name" data-es>Reparación de A/C</div><p class="service-desc" data-en>Is your A/C blowing hot? We diagnose and repair your vehicle's air conditioning system.</p><p class="service-desc" data-es>¿Tu A/C no enfría? Diagnosticamos y reparamos el sistema de aire acondicionado.</p></div>
+      <div class="service-card"><span class="service-icon">🔧</span><div class="service-name" data-en>Suspension Diagnostic</div><div class="service-name" data-es>Diagnóstico de Suspensión</div><p class="service-desc" data-en>Bumpy ride or pulling to one side? We inspect your suspension and identify the issue fast.</p><p class="service-desc" data-es>¿Manejo brusco o jalón? Inspeccionamos tu suspensión e identificamos el problema rápido.</p></div>
     </div>
-
-    <!-- DISCLAIMER STRIP SERVICES -->
     <div class="disclaimer-strip">
-      <div class="disclaimer-box">
-        <span class="disclaimer-icon">⚠️</span>
-        <div class="disclaimer-label" data-en>Disclaimer</div>
-        <div class="disclaimer-label" data-es>Aviso</div>
-        <div class="disclaimer-text" data-en>No warranty on parts supplied by the customer.</div>
-        <div class="disclaimer-text" data-es>No hay garantía en piezas suministradas por el cliente.</div>
-      </div>
+      <div class="disclaimer-box"><span class="disclaimer-icon">⚠️</span><div class="disclaimer-label" data-en>Disclaimer</div><div class="disclaimer-label" data-es>Aviso</div><div class="disclaimer-text" data-en>No warranty on parts supplied by the customer.</div><div class="disclaimer-text" data-es>No hay garantía en piezas suministradas por el cliente.</div></div>
       <div class="disclaimer-center">
-        <a href="tel:6823859218" class="btn-primary" data-en>📞 Call Now</a>
-        <a href="tel:6823859218" class="btn-primary" data-es>📞 Llamar Ahora</a>
-        <button class="btn-outline" onclick="showPage('contact')" data-en>Book Online</button>
-        <button class="btn-outline" onclick="showPage('contact')" data-es>Reservar en Línea</button>
+        <a href="tel:6823859218" class="btn-primary" data-en>📞 Call Now</a><a href="tel:6823859218" class="btn-primary" data-es>📞 Llamar Ahora</a>
+        <button class="btn-outline" onclick="showPage('contact')" data-en>Book Online</button><button class="btn-outline" onclick="showPage('contact')" data-es>Reservar en Línea</button>
       </div>
-      <div class="disclaimer-box">
-        <span class="disclaimer-icon">📋</span>
-        <div class="disclaimer-label" data-en>Disclaimer</div>
-        <div class="disclaimer-label" data-es>Aviso</div>
-        <div class="disclaimer-text" data-en>After 15 days we are not responsible for any finished work not picked up.</div>
-        <div class="disclaimer-text" data-es>Después de 15 días no nos hacemos responsables por ningún trabajo terminado no retirado.</div>
-      </div>
+      <div class="disclaimer-box"><span class="disclaimer-icon">📋</span><div class="disclaimer-label" data-en>Disclaimer</div><div class="disclaimer-label" data-es>Aviso</div><div class="disclaimer-text" data-en>After 15 days we are not responsible for any finished work not picked up.</div><div class="disclaimer-text" data-es>Después de 15 días no nos hacemos responsables por ningún trabajo terminado no retirado.</div></div>
     </div>
   </section>
-</div><!-- /services -->
+</div>
 
-
-<!-- ══ ABOUT ══ -->
+<!-- ABOUT -->
 <div class="page" id="page-about">
   <section style="padding-top:64px">
-    <div class="section-eyebrow" data-en>Our Story</div>
-    <div class="section-eyebrow" data-es>Nuestra Historia</div>
-    <div class="section-title" data-en>ABOUT EL JEFE'S</div>
-    <div class="section-title" data-es>SOBRE EL JEFE'S</div>
+    <div class="section-eyebrow" data-en>Our Story</div><div class="section-eyebrow" data-es>Nuestra Historia</div>
+    <div class="section-title" data-en>ABOUT EL JEFE'S</div><div class="section-title" data-es>SOBRE EL JEFE'S</div>
     <div class="about-layout">
-      <div class="about-visual">
-        <img src="c3432b64-0941-4790-9906-6d726a660cd6.JPG" alt="El Jefe's Tire Shop"/>
-      </div>
+      <div class="about-visual"><img src="c3432b64-0941-4790-9906-6d726a660cd6.JPG" alt="El Jefe's Tire Shop"/></div>
       <div class="about-text">
         <p data-en><strong>El Jefe's Tire Shop</strong> is Fort Worth's trusted neighborhood tire and auto shop, located right on E Rosedale St. We've built our reputation serving our community with honest work and fair prices.</p>
         <p data-en>We know how important your vehicle is to your daily life — that's why we treat every car like it's our own. From a quick flat fix to a full brake job, we get it done right the first time.</p>
@@ -401,56 +277,46 @@
         <p data-es>Sabemos lo importante que es tu vehículo — por eso tratamos cada carro como si fuera el nuestro.</p>
         <p data-es>Atendemos con orgullo a clientes de habla inglesa y española con el mismo nivel de cuidado y profesionalismo.</p>
         <div class="about-highlights">
-          <div class="about-highlight" data-en>Bilingual team — English & Spanish</div>
-          <div class="about-highlight" data-es>Equipo bilingüe — Inglés y Español</div>
-          <div class="about-highlight" data-en>New and used tires always in stock</div>
-          <div class="about-highlight" data-es>Llantas nuevas y usadas siempre en existencia</div>
-          <div class="about-highlight" data-en>Open 6 days a week, 8AM–7PM</div>
-          <div class="about-highlight" data-es>Abiertos 6 días a la semana, 8AM–7PM</div>
-          <div class="about-highlight" data-en>Honest quotes, no hidden fees</div>
-          <div class="about-highlight" data-es>Presupuestos honestos, sin cargos ocultos</div>
+          <div class="about-highlight" data-en>Bilingual team — English & Spanish</div><div class="about-highlight" data-es>Equipo bilingüe — Inglés y Español</div>
+          <div class="about-highlight" data-en>New and used tires always in stock</div><div class="about-highlight" data-es>Llantas nuevas y usadas siempre en existencia</div>
+          <div class="about-highlight" data-en>Open 6 days a week, 8AM–7PM</div><div class="about-highlight" data-es>Abiertos 6 días a la semana, 8AM–7PM</div>
+          <div class="about-highlight" data-en>Honest quotes, no hidden fees</div><div class="about-highlight" data-es>Presupuestos honestos, sin cargos ocultos</div>
         </div>
       </div>
     </div>
   </section>
-</div><!-- /about -->
+</div>
 
-
-<!-- ══ GALLERY ══ -->
+<!-- GALLERY -->
 <div class="page" id="page-gallery">
   <section style="padding-top:64px">
-    <div class="section-eyebrow" data-en>Our Work</div>
-    <div class="section-eyebrow" data-es>Nuestro Trabajo</div>
-    <div class="section-title" data-en>GALLERY</div>
-    <div class="section-title" data-es>GALERÍA</div>
+    <div class="section-eyebrow" data-en>Our Work</div><div class="section-eyebrow" data-es>Nuestro Trabajo</div>
+    <div class="section-title" data-en>GALLERY</div><div class="section-title" data-es>GALERÍA</div>
     <p class="section-desc" data-en>A look inside El Jefe's — our shop, our inventory, our people.</p>
     <p class="section-desc" data-es>Un vistazo al interior de El Jefe's — nuestro taller, inventario y equipo.</p>
     <div class="gallery-grid">
       <div class="gallery-item wide"><img src="a92f66e9-737e-4efe-87f4-9a79b35c9b1e.JPG" alt="Tire inventory"/></div>
-      <div class="gallery-item large"><img src="2bcbec1a-ec03-406d-8bf6-01ec3e3c66fd.JPG" alt="Shop front"/></div>
+      <div class="gallery-item"><img src="2bcbec1a-ec03-406d-8bf6-01ec3e3c66fd.JPG" alt="Shop front"/></div>
       <div class="gallery-item"><img src="26b59ba8-d2d9-4a37-b74a-e29bdba6bf16.JPG" alt="Used tires rack"/></div>
       <div class="gallery-item"><img src="ec69f70e-34ca-4f4f-821b-178ae50c6602.JPG" alt="Shop"/></div>
       <div class="gallery-item"><img src="d2b84b7f-39ad-47ac-a8fa-5809a3e7b01b.JPG" alt="Shop interior"/></div>
       <div class="gallery-item"><img src="1da376d1-5009-48a4-b155-fa921f8773f0.JPG" alt="Mechanic working"/></div>
       <div class="gallery-item"><img src="07ec4dce-db15-4d52-8ac3-cf5be6896a52.JPG" alt="Used tire racks"/></div>
       <div class="gallery-item"><img src="b102923e-39c3-4691-96cf-cc859500f37b.JPG" alt="New tires"/></div>
-      <div class="gallery-item"><img src="IMG_0051.jpg" alt="Lincoln with rims"/></div>       <div class="gallery-item"><img src="IMG_0052.png" alt="RAM truck"/></div>
+      <div class="gallery-item"><img src="IMG_0051.jpg" alt="Lincoln with rims"/></div>
+      <div class="gallery-item"><img src="IMG_0052.png" alt="RAM truck"/></div>
     </div>
   </section>
-</div><!-- /gallery -->
+</div>
 
-
-<!-- ══ CONTACT ══ -->
+<!-- CONTACT -->
 <div class="page" id="page-contact">
   <section style="padding-top:64px">
-    <div class="section-eyebrow" data-en>Get In Touch</div>
-    <div class="section-eyebrow" data-es>Contáctanos</div>
-    <div class="section-title" data-en>BOOK AN APPOINTMENT</div>
-    <div class="section-title" data-es>HACER UNA CITA</div>
+    <div class="section-eyebrow" data-en>Get In Touch</div><div class="section-eyebrow" data-es>Contáctanos</div>
+    <div class="section-title" data-en>BOOK AN APPOINTMENT</div><div class="section-title" data-es>HACER UNA CITA</div>
     <div class="contact-layout">
       <div class="contact-info">
-        <h3 data-en>Find Us</h3>
-        <h3 data-es>Encuéntranos</h3>
+        <h3 data-en>Find Us</h3><h3 data-es>Encuéntranos</h3>
         <div class="info-row"><span class="info-icon">📍</span><div><div class="info-label" data-en>Address</div><div class="info-label" data-es>Dirección</div><div class="info-value">2200 E Rosedale St<br>Fort Worth, TX 76105</div></div></div>
         <div class="info-row"><span class="info-icon">📞</span><div><div class="info-label" data-en>Phone</div><div class="info-label" data-es>Teléfono</div><div class="info-value"><a href="tel:6823859218">682-385-9218</a></div></div></div>
         <div class="info-row"><span class="info-icon">✉️</span><div><div class="info-label">Email</div><div class="info-value"><a href="mailto:eljefestires@gmail.com">eljefestires@gmail.com</a></div></div></div>
@@ -460,15 +326,11 @@
           <a href="https://www.tiktok.com/t/ZP8GehCmY/" target="_blank" class="social-btn">TikTok</a>
           <a href="https://snapchat.com/t/geKI1egb" target="_blank" class="social-btn">Snapchat</a>
         </div>
-        <div class="map-placeholder">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3356.3!2d-97.3065!3d32.7281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s2200+E+Rosedale+St%2C+Fort+Worth%2C+TX+76105!5e0!3m2!1sen!2sus!4v1234567890" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+        <div class="map-placeholder"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3356.3!2d-97.3065!3d32.7281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s2200+E+Rosedale+St%2C+Fort+Worth%2C+TX+76105!5e0!3m2!1sen!2sus!4v1234567890" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       </div>
       <div class="booking-form">
-        <h3 data-en>Request an Appointment</h3>
-        <h3 data-es>Solicitar una Cita</h3>
-        <p data-en>Fill out the form and we'll get back to you as soon as possible.</p>
-        <p data-es>Llena el formulario y nos pondremos en contacto pronto.</p>
+        <h3 data-en>Request an Appointment</h3><h3 data-es>Solicitar una Cita</h3>
+        <p data-en>Fill out the form and we'll get back to you as soon as possible.</p><p data-es>Llena el formulario y nos pondremos en contacto pronto.</p>
         <div class="form-row">
           <div class="form-group"><label data-en>First Name</label><label data-es>Nombre</label><input type="text" id="fname" placeholder="John"></div>
           <div class="form-group"><label data-en>Last Name</label><label data-es>Apellido</label><input type="text" id="lname" placeholder="Doe"></div>
@@ -485,6 +347,8 @@
             <option value="brakes">Brakes / Frenos</option>
             <option value="oil">Oil Change / Cambio de Aceite</option>
             <option value="balance">Balancing & Rotation</option>
+            <option value="ac">A/C Repair</option>
+            <option value="suspension">Suspension Diagnostic</option>
             <option value="mechanic">General Mechanic / Mecánica</option>
             <option value="other">Other / Otro</option>
           </select>
@@ -493,15 +357,11 @@
         <div class="form-group"><label data-en>Message (optional)</label><label data-es>Mensaje (opcional)</label><textarea id="message" placeholder="Tell us about your vehicle..."></textarea></div>
         <button class="btn-primary" style="width:100%" onclick="submitForm()" data-en>Send Request</button>
         <button class="btn-primary" style="width:100%" onclick="submitForm()" data-es>Enviar Solicitud</button>
-        <div class="form-success" id="form-success">
-          <span data-en>✅ Request sent! We'll call you back shortly.</span>
-          <span data-es>✅ ¡Solicitud enviada! Te llamaremos pronto.</span>
-        </div>
+        <div class="form-success" id="form-success"><span data-en>✅ Request sent! We'll call you back shortly.</span><span data-es>✅ ¡Solicitud enviada! Te llamaremos pronto.</span></div>
       </div>
     </div>
   </section>
-</div><!-- /contact -->
-
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -511,7 +371,7 @@
         <div class="footer-logo">EL <span>JEFE'S</span></div>
         <div class="footer-tagline" data-en>Fort Worth's Tire & Auto Experts</div>
         <div class="footer-tagline" data-es>Expertos en Llantas y Autos de Fort Worth</div>
-        <img src="logo.jpeg.jpg" class="footer-logo-img" alt="El Jefe's Logo"/>
+        <img src="logo.jpeg.jpg" class="footer-logo-img" alt="El Jefe's Logo" onerror="this.style.display='none'"/>
       </div>
       <div class="footer-links">
         <div class="footer-col">
@@ -552,35 +412,11 @@
 </footer>
 
 <script>
-  function showPage(name){
-    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-    document.getElementById('page-'+name).classList.add('active');
-    window.scrollTo({top:0,behavior:'smooth'});
-  }
-  function toggleMenu(){
-    document.getElementById('mobile-menu').classList.toggle('open');
-  }
+  function showPage(name){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+name).classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
+  function toggleMenu(){document.getElementById('mobile-menu').classList.toggle('open')}
   let isSpanish=false;
-  function toggleLanguage(){
-    isSpanish=!isSpanish;
-    document.body.classList.toggle('spanish',isSpanish);
-  }
-  function submitForm(){
-    const fname=document.getElementById('fname').value.trim();
-    const phone=document.getElementById('phone').value.trim();
-    const service=document.getElementById('service').value;
-    if(!fname||!phone||!service){
-      alert(isSpanish?'Por favor completa los campos requeridos.':'Please fill in the required fields.');
-      return;
-    }
-    document.getElementById('form-success').style.display='block';
-    document.getElementById('fname').value='';
-    document.getElementById('lname').value='';
-    document.getElementById('phone').value='';
-    document.getElementById('service').value='';
-    document.getElementById('date').value='';
-    document.getElementById('message').value='';
-  }
+  function toggleLanguage(){isSpanish=!isSpanish;document.body.classList.toggle('spanish',isSpanish)}
+  function submitForm(){const fname=document.getElementById('fname').value.trim();const phone=document.getElementById('phone').value.trim();const service=document.getElementById('service').value;if(!fname||!phone||!service){alert(isSpanish?'Por favor completa los campos requeridos.':'Please fill in the required fields.');return}document.getElementById('form-success').style.display='block';document.getElementById('fname').value='';document.getElementById('lname').value='';document.getElementById('phone').value='';document.getElementById('service').value='';document.getElementById('date').value='';document.getElementById('message').value=''}
 </script>
 </body>
 </html>
