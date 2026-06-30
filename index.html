@@ -46,7 +46,7 @@
     .disclaimer-icon{font-size:20px;margin-bottom:6px;display:block}
     .hero{min-height:90vh;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--black)}
     .hero-bg{position:absolute;inset:0;background-image:url('Heroimage.jpeg');background-size:cover;background-position:center;opacity:.18}
-    .hero-content{position:relative;max-width:1200px;margin:0 auto;padding:80px 24px;width:100%}
+    .hero-content{position:relative;max-width:1200px;margin:0 auto;padding:80px 24px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
     .hero-eyebrow{font-family:var(--font-cond);font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:20px;display:flex;align-items:center;gap:12px}
     .hero-eyebrow::before{content:'';display:block;width:32px;height:2px;background:var(--green)}
     .hero h1{font-family:var(--font-display);font-size:clamp(72px,10vw,150px);line-height:.9;color:var(--white);margin-bottom:8px}
@@ -57,6 +57,8 @@
     .hero-stats{display:flex;gap:48px;margin-top:64px;padding-top:40px;border-top:1px solid var(--border);flex-wrap:wrap}
     .stat-num{font-family:var(--font-display);font-size:48px;color:var(--green);line-height:1}
     .stat-label{font-family:var(--font-cond);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-top:4px;opacity:.7}
+    .hero-side-img{display:flex;justify-content:center;align-items:center}
+    .hero-side-img img{max-width:380px;width:100%;filter:drop-shadow(0 0 40px rgba(61,220,87,.3))}
     .hours-band{background:var(--green);padding:14px 24px;text-align:center}
     .hours-band p{font-family:var(--font-cond);font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--black)}
     .services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1px;background:var(--border);border:1px solid var(--border)}
@@ -89,6 +91,10 @@
     .about-highlights{display:flex;flex-direction:column;gap:16px;margin-top:32px}
     .about-highlight{display:flex;align-items:center;gap:16px;font-family:var(--font-cond);font-size:15px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--green)}
     .about-highlight::before{content:'';width:8px;height:8px;background:var(--green);border-radius:50%;flex-shrink:0}
+    .owner-card{display:flex;align-items:center;gap:16px;background:var(--card);border:1px solid var(--border);padding:16px 20px;margin-top:32px;border-radius:2px}
+    .owner-card img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid var(--green)}
+    .owner-card-name{font-family:var(--font-display);font-size:22px;color:var(--white)}
+    .owner-card-role{font-family:var(--font-cond);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);opacity:.7}
     .contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px}
     .contact-info h3{font-family:var(--font-display);font-size:32px;color:var(--white);margin-bottom:24px}
     .info-row{display:flex;gap:16px;margin-bottom:24px;align-items:flex-start}
@@ -129,7 +135,7 @@
     .footer-col a:hover{opacity:1}
     .footer-bottom{border-top:1px solid var(--border);padding-top:20px;display:flex;justify-content:space-between;align-items:center;gap:12px}
     .footer-bottom p{font-size:13px;color:var(--green);opacity:.5}
-    @media(max-width:900px){.about-layout{grid-template-columns:1fr;gap:40px}.contact-layout{grid-template-columns:1fr;gap:40px}.disclaimer-strip{flex-direction:column}}
+    @media(max-width:900px){.about-layout{grid-template-columns:1fr;gap:40px}.contact-layout{grid-template-columns:1fr;gap:40px}.disclaimer-strip{flex-direction:column}.hero-content{grid-template-columns:1fr}.hero-side-img{display:none}}
     @media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.gallery-grid{grid-template-columns:repeat(2,1fr)}.gallery-item.wide{grid-column:span 2}.hero-stats{gap:28px}.form-row{grid-template-columns:1fr}.footer-top{flex-direction:column}.footer-links{flex-wrap:wrap;gap:32px}}
     @media(max-width:480px){.gallery-grid{grid-template-columns:1fr}.gallery-item.wide{grid-column:span 1}.booking-form{padding:24px}}
     [data-es]{display:none}
@@ -171,23 +177,28 @@
   <div class="hero">
     <div class="hero-bg"></div>
     <div class="hero-content">
-      <div class="hero-eyebrow" data-en>Fort Worth, TX — Your Neighborhood Shop</div>
-      <div class="hero-eyebrow" data-es>Fort Worth, TX — Tu Taller de Confianza</div>
-      <h1>EL <span class="green">JEFE'S</span></h1>
-      <div class="hero-sub" data-en>TIRE SHOP</div>
-      <div class="hero-sub" data-es>TALLER DE LLANTAS</div>
-      <p class="hero-desc" data-en>Fort Worth's go-to spot for tires, brakes, and everything in between. New and used tires, expert mechanics, honest prices — done right, every time.</p>
-      <p class="hero-desc" data-es>El lugar de confianza en Fort Worth para llantas, frenos y todo lo que necesitas. Llantas nuevas y usadas, mecánicos expertos y precios honestos — siempre bien hecho.</p>
-      <div class="hero-actions">
-        <button class="btn-primary" onclick="showPage('contact')" data-en>Book Appointment</button>
-        <button class="btn-primary" onclick="showPage('contact')" data-es>Hacer una Cita</button>
-        <button class="btn-outline" onclick="showPage('services')" data-en>Our Services</button>
-        <button class="btn-outline" onclick="showPage('services')" data-es>Nuestros Servicios</button>
+      <div>
+        <div class="hero-eyebrow" data-en>Fort Worth, TX — Your Neighborhood Shop</div>
+        <div class="hero-eyebrow" data-es>Fort Worth, TX — Tu Taller de Confianza</div>
+        <h1>EL <span class="green">JEFE'S</span></h1>
+        <div class="hero-sub" data-en>TIRE SHOP</div>
+        <div class="hero-sub" data-es>TALLER DE LLANTAS</div>
+        <p class="hero-desc" data-en>Fort Worth's go-to spot for tires, brakes, and everything in between. New and used tires, expert mechanics, honest prices — done right, every time.</p>
+        <p class="hero-desc" data-es>El lugar de confianza en Fort Worth para llantas, frenos y todo lo que necesitas. Llantas nuevas y usadas, mecánicos expertos y precios honestos — siempre bien hecho.</p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="showPage('contact')" data-en>Book Appointment</button>
+          <button class="btn-primary" onclick="showPage('contact')" data-es>Hacer una Cita</button>
+          <button class="btn-outline" onclick="showPage('services')" data-en>Our Services</button>
+          <button class="btn-outline" onclick="showPage('services')" data-es>Nuestros Servicios</button>
+        </div>
+        <div class="hero-stats">
+          <div><div class="stat-num">12+</div><div class="stat-label" data-en>Services</div><div class="stat-label" data-es>Servicios</div></div>
+          <div><div class="stat-num">6</div><div class="stat-label" data-en>Days a Week</div><div class="stat-label" data-es>Días/Semana</div></div>
+          <div><div class="stat-num">100%</div><div class="stat-label" data-en>Committed</div><div class="stat-label" data-es>Comprometidos</div></div>
+        </div>
       </div>
-      <div class="hero-stats">
-        <div><div class="stat-num">12+</div><div class="stat-label" data-en>Services</div><div class="stat-label" data-es>Servicios</div></div>
-        <div><div class="stat-num">6</div><div class="stat-label" data-en>Days a Week</div><div class="stat-label" data-es>Días/Semana</div></div>
-        <div><div class="stat-num">100%</div><div class="stat-label" data-en>Committed</div><div class="stat-label" data-es>Comprometidos</div></div>
+      <div class="hero-side-img">
+        <img src="OwnerlogoV2.PNG" alt="El Jefe's Owner"/>
       </div>
     </div>
   </div>
@@ -276,14 +287,17 @@
         <p data-es>Sabemos lo importante que es tu vehículo — por eso tratamos cada carro como si fuera el nuestro.</p>
         <p data-es>Atendemos con orgullo a clientes de habla inglesa y española con el mismo nivel de cuidado y profesionalismo.</p>
         <div class="about-highlights">
-          <div style="display:flex;align-items:center;gap:14px">
-            <div class="about-highlight" data-en>Bilingual team — English & Spanish</div><div class="about-highlight" data-es>Equipo bilingüe — Inglés y Español</div>
-            <img src="Ownerlogo.PNG" alt="Owner" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--green);flex-shrink:0"/>
-            <div style="font-family:var(--font-cond);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green)"><span data-en>Owner</span><span data-es>Jefe</span></div>
-          </div>
+          <div class="about-highlight" data-en>Bilingual team — English & Spanish</div><div class="about-highlight" data-es>Equipo bilingüe — Inglés y Español</div>
           <div class="about-highlight" data-en>New and used tires always in stock</div><div class="about-highlight" data-es>Llantas nuevas y usadas siempre en existencia</div>
           <div class="about-highlight" data-en>Open 6 days a week, 8AM–7PM</div><div class="about-highlight" data-es>Abiertos 6 días a la semana, 8AM–7PM</div>
           <div class="about-highlight" data-en>Honest quotes, no hidden fees</div><div class="about-highlight" data-es>Presupuestos honestos, sin cargos ocultos</div>
+        </div>
+        <div class="owner-card">
+          <img src="OwnerlogoV2.PNG" alt="Owner"/>
+          <div>
+            <div class="owner-card-name">El Jefe</div>
+            <div class="owner-card-role"><span data-en>Owner & Head Mechanic</span><span data-es>Dueño y Mecánico Principal</span></div>
+          </div>
         </div>
       </div>
     </div>
